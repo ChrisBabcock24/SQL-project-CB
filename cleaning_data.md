@@ -26,3 +26,4 @@ converted unit_price to corrected values ( /1000000) - this was done on multiple
 removed rows from temporary table that did not result in a transaction
 Queries:
 Below, provide the SQL queries you used to clean your data.
+
