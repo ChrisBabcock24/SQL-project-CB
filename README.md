@@ -6,6 +6,11 @@ practice cleaning data. I hoped to clean the dataset as accurately as possible w
 I also intended to identify relationships between tables to be able to fill in
 missing information in certain columns.
 
+NOTE: I included an ERD for the main tables as well as a separate ERD for additional tables I used for when transactions occurred.
+Some code refers to tables where I was querying tables that had only successful transactions (analytics_transactions, and all_sessions_transactions)
+This shortened the time to run queries if I was just looking for successful transactions
+
+
 ## Process
 1. First step was to input the main tables into database.
 Used data type text to maintain data integrity before changing to 

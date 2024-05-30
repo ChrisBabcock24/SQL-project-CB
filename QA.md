@@ -3,8 +3,15 @@ What are your risk areas? Identify and describe them.
 Risk areas included columns that had large amounts of NULL values, this could possibly skew the results of data when calculating if the row is counted in
 results.
 
+Formatting of data fields with names - Some fields in the product names had similar names but spelling or capitalization was slightly different.
 Multiple names for the same item may also give a false result if is it grouped correctly.
 
+Conflicting values or data types - calculations could return as NULL if not in correct data type
+
+Formatting of data fields with names - Some fields in the product names had similar names but spelling or capitalization was slightly different.
+
+I found that if a query was run more than once while using the UPDATE statement that the data would be invalid as it calculated on the previously UPDATED
+value. Use SELECT to run these queries before you are absolutely sure you want to UPDATE table. 
 
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
