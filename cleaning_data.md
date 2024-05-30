@@ -18,7 +18,13 @@ Confirming by referencing existing rows with data present and comparing the calc
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
-
+**Changed any category that included Nest within the string to group more accurately**
 UPDATE all_sessions_transactions
 SET v2_product_category = 'Home/Nest/Nest-USA/'
 WHERE v2_product_category ILIKE '%nest%';
+
+**Changed the format from intial text to numeric to be able to calculate average time spent on site**
+**Time interval could not be assumed in this column so left as numeric**
+ALTER TABLE analytics_transactions
+ALTER COLUMN time_on_site TYPE NUMERIC USING time_on_site::NUMERIC
+
