@@ -1,29 +1,24 @@
 What issues will you address by cleaning the data?
 
-1.COMPILING SKUS INTO ONE TABLE
+1.Compile all product_skus into one column using joins
+2.Change time and date fields to correct format
+3.Clean duplicates
+4.Check for NULL or irrelevent data
+5.Filter the completed transactions from the incomplete 
+6 Correct formatting where data types are known.
+7. Convert transactions to a boolean column where NULL = FALSE(no transaction made) 
+and then use this to filter. Questions are concerned with successful transactions
+8.Convert revenue, unit_price and other fields that are associated with monetary values. 
+The numbers appear to be multiplied by 1 million.
+9. Determining a way to create primary keys for tables all_sessions and analytics, no clear column had all unique values
+10.Calculate missing revenue fields using units_sold and unit_price. 
+Confirming by referencing existing rows with data present and comparing the calc of their respective units_sold and unit_price
+11. Found an instance of incorrect country in relation to city CANADA - NEW YORK
 
-The sales_report and sales_by_sku tables have columns that share most of the same information.
-The sales_by_sku table has a few additional SKU numbers without names associated.
-
-I will be removing duplicate entries in the sales_report and sales_by_sku tables by using LEFT JOIN
-to keep the unnamed skus until they can either be identified or removed if not relevant.
-
-'products' table contains more sku's than 'sales_report' and 'sales_by_sku' tables
-and the 'all_sessions' contains even more skus.
-
-I will be compiling all of the distinct skus into one table to reference and relate to other tables
-
-2. removing duplicates from anayltics
-created temporary tables to clean data 
-converted unit_price to corrected values ( /1000000) - this was done on multiple columns within all_sessions and analytics
-
-3.converted transaction null into a 0 and then True or False (boolean) - then filtered on this field to determine if transaction was made. confirmed by selecting both revenue and units_sold to make sure that transaction field was accurately reflecting a sale.
-4. converted time related columns to more recognizable formats.
-
-5. calculated revenue based on other columns to fill in missing data in revenue column
-
-6. 
-removed rows from temporary table that did not result in a transaction
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
+
+UPDATE all_sessions_transactions
+SET v2_product_category = 'Home/Nest/Nest-USA/'
+WHERE v2_product_category ILIKE '%nest%';
