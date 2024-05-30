@@ -13,6 +13,7 @@ GROUP BY
 ORDER BY
 	COUNT(*) DESC
 LIMIT 1
+
 Answer: 
 
 "Home/Nest/Nest-USA/"	27
@@ -30,12 +31,12 @@ FROM
 
 Answer:
 **calculated the averages of time and revenue to see how long it takes to return a purchase or sale.**
-avg_time_on_site          revenu_avg
+avg_time_on_site          revenue_avg
 1114.2547717296595262	391.03100127017734
 
 
 
-Question 3:  What channel group results in the most Revenue
+Question 3:  What channel group results in the most revenue
 
 SQL Queries:
 SELECT 

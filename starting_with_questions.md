@@ -23,7 +23,7 @@ LIMIT 1 **returns only the top transaction result**
 
 Answer:
 
-**"United States"	"not available in demo dataset"	6092.5599999999995**
+"United States"	"not available in demo dataset"	6092.5599999999995
 
  **When running this query it gave a result that was not useful due to the fact that there was not a valid city.**
  **A modification to the code could include a HAVING statement to filter out any city that has the value 'not available in demo dataset.'**
